@@ -1,0 +1,17 @@
+version: "3.1"
+# 管理的服务
+services:
+  redis:
+    restart: always
+    image: redis:5.0.0
+    ports:
+      # 端口映射
+      - 6391:6379
+    volumes:
+      # 持久化 目录映射
+      - "./redis/redis.conf:/usr/local/etc/redis/redis.conf"
+      - "./redis/data:/data"
+    command:
+      # 执行的命令
+      redis-server /usr/local/etc/redis/redis.conf
+    tty: true
