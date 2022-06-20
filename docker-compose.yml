@@ -3,7 +3,7 @@ version: "3.1"
 services:
   redis:
     restart: always
-    image: redis:5.0.0
+    image: redis:6.0
     ports:
       # 端口映射
       - 6391:6379
